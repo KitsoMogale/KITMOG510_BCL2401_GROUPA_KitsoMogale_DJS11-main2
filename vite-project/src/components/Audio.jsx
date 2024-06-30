@@ -13,7 +13,13 @@ export const Audio = ({rerender})=>{
     rerender(new Array);
 
    }
-  
+    const favouriteEP = (ep)=>{
+        
+        let local = localStorage.getItem('favs') 
+        ? [...JSON.parse(localStorage.getItem('favs')), ep]
+        : [ep];
+      localStorage.setItem('favs', JSON.stringify(local));
+    }
     return(
         <>
 
@@ -23,7 +29,7 @@ export const Audio = ({rerender})=>{
                           <div id='audiopic'>
                           <img className="audioimage" src={searchValue.image}/>
                           <p>{searchValue.title}</p>
-                          <button onClick={()=>{}}>fav</button>
+                          <button onClick={()=>{favouriteEP(searchValue)}}>fav</button>
                           </div>
                             <audio src={searchValue.url} controls/>
                              <br/>

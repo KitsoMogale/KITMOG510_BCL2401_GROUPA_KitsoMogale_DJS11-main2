@@ -68,7 +68,10 @@ setOpenEp(true);
            <>
             <div id='top1'>
               <img className="season-img" src={data.seasons[0].image}/>
+              <div className="update">
+              <p>Updated: {data.updated}</p>
               <button id='btnom1' onClick={()=> setOpen(true)}>view desc</button>
+              </div>
               </div>
                { open?
                   <div id='modal1'>
@@ -89,7 +92,9 @@ setOpenEp(true);
         
                  return(  
                         <div key={season.season} className="preview-divs" >
+                          <img className="simg" src={season.image} alt='img'/>
                              <h2>  Season {season.season}</h2>
+                             <p>Episodes: {season.episodes.length}</p>
                             <button onClick={()=>openEpisodes(season.season)}>open</button>
                         </div>
                         )

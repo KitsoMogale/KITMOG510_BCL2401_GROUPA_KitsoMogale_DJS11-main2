@@ -49,6 +49,7 @@ main{
 .preview-divs{
   font-weight: bold;
   border: 1px grey solid;
+  padding: auto;
 }
 
 .preview-divs:hover{
@@ -101,24 +102,34 @@ main{
     border-bottom: 2px grey solid;
   }
   .season-img{
-    width:65%;
+    width:75%;
     height:85%;
     position: relative;
     top:4vh;
+}
+.update{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top:2vh;
 }
 #btnom1{
   z-index: 1;
   background-color: aqua;
   position: relative;
-  top:10%;
-  left:2%
+  height: 3vh;
+  top:2vh;
+  margin: 5px;
+}
+.simg{
+  width:10vh;
 }
 .audioimage{
   width:15vh;
 }
 .audioDiv{
-  background-color: white;
-  width: 35vh;
+  background-color: rgb(13, 25, 240);
+  width: 45vh;
   position: fixed;
   left:40vh;
   z-index: 2;
