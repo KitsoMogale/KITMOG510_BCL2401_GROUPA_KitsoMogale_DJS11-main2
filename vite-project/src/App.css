@@ -1,0 +1,204 @@
+#root {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  border-bottom: 2px rgb(103, 96, 96) solid;
+  position: fixed;
+  z-index: 2;
+  background-color: black;
+  width: 100%;
+  top:0;
+}
+
+main{
+  position: relative;
+}
+
+#episodes{
+  background-color: rgb(9, 9, 9);
+  
+}
+
+.episode{
+  border: 1px grey solid;
+  padding: 3px;
+}
+
+
+#modal1{
+  border: 2px rgb(103, 98, 98) solid;
+  color:black;
+  background-color: white;
+}
+
+.preview_div{
+  font-weight: bold;
+
+}
+
+.preview-divs{
+  font-weight: bold;
+  border: 1px grey solid;
+}
+
+.preview-divs:hover{
+  background-color: white;
+  color:black;
+}
+
+#top1:hover{
+  background-color: rgb(161, 159, 159);
+}
+
+.preview_div:hover{
+  background-color: white;
+  color:black;
+}
+
+.imgHome{
+  width: 14vh;
+  
+}
+
+#buttons{
+  position: relative;
+  top:8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#grid-container {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+
+/* Default grid layout for larger screens */
+@media (min-width: 1024px) {
+  #grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  #top1{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px grey solid;
+  }
+  .season-img{
+    width:65%;
+    height:85%;
+    position: relative;
+    top:4vh;
+}
+#btnom1{
+  z-index: 1;
+  background-color: aqua;
+  position: relative;
+  top:10%;
+  left:2%
+}
+.audioimage{
+  width:15vh;
+}
+.audioDiv{
+  background-color: white;
+  width: 35vh;
+  position: fixed;
+  left:40vh;
+  z-index: 2;
+  top:12vh;
+  color: rgb(9, 9, 9);
+  font-weight: bold;
+}
+
+}
+
+/* Adjust grid for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  #top1{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px grey solid;
+  }
+  .season-img{
+    width:65%;
+    height:85%;
+    position: relative;
+    top:4vh;
+}
+#btnom1{
+  z-index: 1;
+  background-color: aqua;
+  position: relative;
+  top:10%;
+  left:2%
+}
+  
+
+}
+
+/* Ensure at least 2 columns on mobile devices */
+@media (max-width: 767px) {
+  #grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 10px;
+  }
+
+
+  #top1{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px grey solid;
+  }
+  .season-img{
+    width:75%;
+    height:65%;
+    position: relative;
+    top:4vh;
+}
+#btnom1{
+  z-index: 1;
+  background-color: aqua;
+  position: relative;
+  top:15%;
+}
+.audioimage{
+  width:5vh;
+}
+.audioDiv{
+  background-color: white;
+  width: 50vh;
+  position: fixed;
+  left:1vh;
+  top:14vh;
+  z-index: 2;
+  color:rgb(16, 16, 16);
+  font-weight: bold;
+}
+}
