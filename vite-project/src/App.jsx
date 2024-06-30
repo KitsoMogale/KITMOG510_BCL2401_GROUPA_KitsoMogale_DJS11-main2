@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { Home } from './components/Home'
 import { Season } from './components/Seasons'
+import {ContextAProviderA,ContextBProviderB} from './components/Context.jsx'
 
 function App() {
 
@@ -14,8 +15,12 @@ function App() {
     setRender(trigger)
   }
 
+
+
 return(
   <>
+  <ContextAProviderA>
+    <ContextBProviderB>
     <BrowserRouter>
 
       <Routes>
@@ -25,6 +30,8 @@ return(
         </Route>
       </Routes>
     </BrowserRouter>
+    </ContextBProviderB>
+    </ContextAProviderA>
   </>
 )
 

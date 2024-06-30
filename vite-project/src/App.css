@@ -164,8 +164,18 @@ main{
   z-index: 1;
   background-color: aqua;
   position: relative;
+  height: 3vh;
   top:10%;
   left:2%
+}
+.simg{
+  width:8vh;
+}
+.update{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top:2vh;
 }
   
 
@@ -197,6 +207,7 @@ main{
   z-index: 1;
   background-color: aqua;
   position: relative;
+  height: 3vh;
   top:15%;
 }
 .audioimage{
@@ -211,5 +222,14 @@ main{
   z-index: 2;
   color:rgb(16, 16, 16);
   font-weight: bold;
+}
+.simg{
+  width:8vh;
+}
+.update{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top:2vh;
 }
 }

@@ -1,16 +1,19 @@
+import { useContextA } from './Context.jsx';
+import { useContextB } from './Context.jsx';
 
 
+export const SelectComponent = ({ option1,option2 }) => {
 
-export const SelectComponent = ({ onSelectChange,option1,option2 }) => {
+    // const handleChange = (event) => {
+    //   onSelectChange(event.target.value);
+    //   console.log(event.target.value)
+    // };
 
-    const handleChange = (event) => {
-      onSelectChange(event.target.value);
-      console.log(event.target.value)
-    };
+    const { setDataA } = useContextA();
   
     return (
       <div>
-        <select onChange={handleChange}>
+        <select onChange={(event)=>setDataA(event.target.value)}>
           <option value="A-Z">{option1}</option>
           <option value="Z-A">{option2}</option>
         </select>
@@ -19,15 +22,13 @@ export const SelectComponent = ({ onSelectChange,option1,option2 }) => {
   };
 
 
-  export const SelectGenre = ({ onSelectChange}) => {
-
-    const handleChange = (event) => {
-      onSelectChange(event.target.value);
-    };
+  export const SelectGenre = () => {
+     
+    const {setDataB} = useContextB();
   
     return (
       <div>
-        <select onChange={handleChange}>
+        <select onChange={(event)=>{setDataB(event.target.value)}}>
         <option value="0">Genre</option>
           <option value="1">Personal Growth</option>
           <option value="2">Investigative Journalism</option>

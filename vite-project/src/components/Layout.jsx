@@ -4,6 +4,7 @@ import { Footer } from "./Footer"
 import { Audio } from "./Audio"
 import { useEffect, useState } from "react"
 import { SelectComponent, SelectGenre } from "./Select"
+import {ContextAProviderA,ContextBProviderB} from './Context.jsx'
 
 
 export const Layout=({rerender,render})=>{

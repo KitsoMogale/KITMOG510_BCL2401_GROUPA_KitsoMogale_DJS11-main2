@@ -5,8 +5,8 @@ export const Favourites = ()=>{
     return(
         <>
 
+              
 
-        
         </>
     )
 }

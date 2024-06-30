@@ -1,10 +1,13 @@
 import { useEffect, useState }  from "react"
 import { Link } from "react-router-dom";
+import { useContextA,useContextB } from './Context.jsx';
 
 
 export const Home=()=>{
 
     const [data,setdata] = useState([]);
+    const { dataA } = useContextA();
+    const {dataB} = useContextB();
 
     useEffect( ()=>{
 
@@ -18,7 +21,29 @@ export const Home=()=>{
             console.log(err)})
   
         
-    },[])
+    },[]);
+
+
+    if(data.length > 0){
+      
+      if(dataA == 'Z-A'){
+      data.sort(function(a, b){
+      if(a.title < b.title) { return 1; }
+      if(a.title > b.title) { return -1; }
+      return 0;}
+      
+  );
+}
+else{
+  data.sort(function(a, b){
+      if(a.title < b.title) { return -1; }
+      if(a.title > b.title) { return 1; }
+      return 0;}
+      
+  );
+}
+
+}
 
 
     return(
@@ -47,8 +72,9 @@ export const Home=()=>{
              return keys.includes(`${num}`)?`${obj[num]}, ` : null
 
            })
-
-      return( <div className='preview_div' key={show.id}>
+    if(show.genres.includes(Number(dataB)) || dataB == '0')
+      return(
+         <div className='preview_div' key={show.id}>
         <Link to={`/id/${show.id}`} onClick={()=>{clickHandler(show.id)}}>
         <img className="imgHome" src={`${show.image}`} />
         <div className="info">
