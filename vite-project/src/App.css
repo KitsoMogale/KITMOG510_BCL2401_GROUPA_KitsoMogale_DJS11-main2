@@ -71,6 +71,21 @@ main{
   
 }
 
+#carousel{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  justify-content: flex-start;
+  margin: auto;
+}
+
+.caroudiv{
+  margin: 2px;
+  border: 2px white solid;
+  height: 35vh;
+  width: auto;
+}
+
 #buttons{
   position: relative;
   top:8vh;

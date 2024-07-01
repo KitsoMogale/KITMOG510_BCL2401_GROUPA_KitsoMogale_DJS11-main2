@@ -4,11 +4,13 @@ import { Footer } from "./Footer"
 import { Audio } from "./Audio"
 import { useEffect, useState } from "react"
 import { SelectComponent, SelectDate, SelectGenre } from "./Select"
-import {ContextAProviderA,ContextBProviderB} from './Context.jsx'
+import { useLocation } from 'react-router-dom';
+import { Carousel } from "./Carousel"
 
 
 export const Layout=({rerender,render})=>{
 
+   const location = useLocation();
 
   useEffect(()=>{
     const div = document.getElementById('main');
@@ -30,6 +32,8 @@ export const Layout=({rerender,render})=>{
           </div>
        { localStorage.getItem('play') == 'true' ? <Audio rerender={rerender} />:null}
           <main id='main'>
+              {location.pathname == '/' && <Carousel/>}
+              {console.log(location.pathname == '/')}
              <Outlet/>
           </main>
 
