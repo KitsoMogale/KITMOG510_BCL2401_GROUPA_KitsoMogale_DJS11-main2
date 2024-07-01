@@ -1,7 +1,25 @@
+import { useState } from "react";
 
 export const Favourites = ()=>{
 
-    const favs = JSON.parse(localStorage.getItem('favs'));
+    const [copyLocal,setCopyLocal] = useState();
+
+
+
+    let favs = JSON.parse(localStorage.getItem('favs'));
+
+    const removeEpi = (episode,shows)=>{
+         
+        favs = favs.filter(item=>{
+            
+            return item.title !== episode.title && item.show !== shows.show
+        })
+
+         localStorage.setItem('favs',JSON.stringify(favs));
+         let copy = favs;
+         setCopyLocal(copy);
+
+    }
 
     function removeDuplicates(arr) {
         const seen = new Set();
@@ -35,10 +53,11 @@ export const Favourites = ()=>{
 
       });
 
+
       console.log(groupedFavs);
 
       const filteredFavs = removeDuplicates1(groupedFavs);
-      console.log(filteredFavs)
+      console.log(filteredFavs);
 
     return(
         <div className="favContainer">
@@ -58,6 +77,7 @@ export const Favourites = ()=>{
                              <h4>{epi.title}</h4>
                              <h4>{item[0].season}</h4>
                              <h4>Liked on:{epi.time}</h4>
+                             <button onClick={()=>{removeEpi(epi,item)}}>remove</button>
                           </div>
                         })
                     }
