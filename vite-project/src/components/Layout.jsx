@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 import { Footer } from "./Footer"
 import { Audio } from "./Audio"
 import { useEffect, useState } from "react"
-import { SelectComponent, SelectGenre } from "./Select"
+import { SelectComponent, SelectDate, SelectGenre } from "./Select"
 import {ContextAProviderA,ContextBProviderB} from './Context.jsx'
 
 
@@ -25,6 +25,7 @@ export const Layout=({rerender,render})=>{
           <Header/>
           <div id='buttons'>
           <SelectComponent   option1={'A-Z'} option2={'Z-A'}/>
+          <SelectDate/>
           <SelectGenre />
           </div>
        { localStorage.getItem('play') == 'true' ? <Audio rerender={rerender} />:null}

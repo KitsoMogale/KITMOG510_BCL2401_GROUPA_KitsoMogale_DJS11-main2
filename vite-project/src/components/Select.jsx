@@ -1,13 +1,8 @@
-import { useContextA } from './Context.jsx';
+import { useContextA, useContextC } from './Context.jsx';
 import { useContextB } from './Context.jsx';
 
 
 export const SelectComponent = ({ option1,option2 }) => {
-
-    // const handleChange = (event) => {
-    //   onSelectChange(event.target.value);
-    //   console.log(event.target.value)
-    // };
 
     const { setDataA } = useContextA();
   
@@ -43,3 +38,19 @@ export const SelectComponent = ({ option1,option2 }) => {
       </div>
     );
   };
+
+
+  export const SelectDate = () => {
+
+    const { setDataC } = useContextC();
+  
+    return (
+      <div>
+        <select onChange={(event)=>setDataC(event.target.value)}>
+          <option value="New">New</option>
+          <option value="Old">Old</option>
+        </select>
+      </div>
+    );
+  };
+  

@@ -129,6 +129,7 @@ main{
 .epifav{
   border: 2px white solid;
   padding: 5px;
+  overflow-x: auto;
 }
 #btnom1{
   z-index: 1;

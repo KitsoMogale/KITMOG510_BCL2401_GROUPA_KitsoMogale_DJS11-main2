@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useContextA} from './Context.jsx';
 
 export const Favourites = ()=>{
 
     const [copyLocal,setCopyLocal] = useState();
+    const { dataA } = useContextA();
 
 
 
@@ -59,13 +61,53 @@ export const Favourites = ()=>{
       const filteredFavs = removeDuplicates1(groupedFavs);
       console.log(filteredFavs);
 
+      if(filteredFavs.length > 0){
+      
+        if(dataA == 'Z-A'){
+        filteredFavs.sort(function(a, b){
+        if(a[0].show < b[0].show) { return 1; }
+        if(a[0].show > b[0].show) { return -1; }
+        return 0;}
+        
+    );}
+
+  else{
+    filteredFavs.sort(function(a, b){
+        if(a[0].show < b[0].show) { return -1; }
+        if(a[0].show > b[0].show) { return 1; }
+        return 0;}
+        
+    );
+  }
+}
+
     return(
         <div className="favContainer">
            {
             
             filteredFavs.length > 0 ? 
             filteredFavs.map(item=>{
-                
+
+                if(item.length > 0){
+      
+                    if(dataA == 'Z-A'){
+                    item.sort(function(a, b){
+                    if(a.title < b.title) { return 1; }
+                    if(a.title > b.title) { return -1; }
+                    return 0;}
+                    
+                );
+              }
+            
+              else{
+                item.sort(function(a, b){
+                    if(a.title < b.title) { return -1; }
+                    if(a.title > b.title) { return 1; }
+                    return 0;}
+                    
+                );
+              }
+            }
               return  <div key={item[0].title}>
                     {console.log(item[0].time)}
                    <h1><img className="simg" src={item[0].image}/> {item[0].show} </h1>
@@ -73,7 +115,7 @@ export const Favourites = ()=>{
                    <div className="favs">
                     {
                         item.map((epi)=>{
-                        return  <div className="epifav" key={epi.time}>
+                        return  <div className="epifav" key={epi.title}>
                              <h4>{epi.title}</h4>
                              <h4>{item[0].season}</h4>
                              <h4>Liked on:{epi.time}</h4>

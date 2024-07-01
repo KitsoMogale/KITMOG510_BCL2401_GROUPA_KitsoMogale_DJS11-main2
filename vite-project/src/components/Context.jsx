@@ -31,3 +31,20 @@ export const ContextBProviderB = ({ children }) => {
     </ContextB.Provider>
   );
 };
+
+
+const ContextC = createContext();
+
+export const useContextC = () => {
+  return useContext(ContextA);
+};
+
+export const ContextAProviderC = ({ children }) => {
+  const [dataC, setDataC] = useState('');
+
+  return (
+    <ContextA.Provider value={{ dataC, setDataC }}>
+      {children}
+    </ContextA.Provider>
+  );
+};

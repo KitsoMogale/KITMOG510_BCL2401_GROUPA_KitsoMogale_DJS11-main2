@@ -46,6 +46,8 @@ else{
 }
 
 
+
+
     return(
         <div id="grid-container">
         
@@ -65,7 +67,7 @@ else{
           '8':'News',
           '9':'Kids and Family'
         };
-        
+
           let pg = show.genres.map((num)=>{
              
                let keys = Object.keys(obj);
