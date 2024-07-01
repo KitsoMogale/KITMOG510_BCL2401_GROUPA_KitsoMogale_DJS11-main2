@@ -5,6 +5,7 @@ import { Layout } from './components/Layout'
 import { Home } from './components/Home'
 import { Season } from './components/Seasons'
 import {ContextAProviderA,ContextBProviderB} from './components/Context.jsx'
+import { Favourites } from './components/Favourites.jsx'
 
 function App() {
 
@@ -26,6 +27,7 @@ return(
       <Routes>
         <Route path='/' element={<Layout render={render} rerender={rerender}/>}>
           <Route index element={<Home/>}/>
+          <Route path='/favourites' element={<Favourites/>}/>
           <Route path='/id/:id' element={<Season rerender={rerender}/>}/>
         </Route>
       </Routes>

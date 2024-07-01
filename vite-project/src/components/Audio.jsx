@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams,useSearchParams } from "react-router-dom";
 
 
 export const Audio = ({rerender})=>{
@@ -29,7 +28,10 @@ export const Audio = ({rerender})=>{
                           <div id='audiopic'>
                           <img className="audioimage" src={searchValue.image}/>
                           <p>{searchValue.title}</p>
-                          <button onClick={()=>{favouriteEP(searchValue)}}>fav</button>
+                          <button onClick={()=>{
+                            const now = new Date();
+                            searchValue.time = `${now.getHours()}H:${now.getMinutes()}Min`
+                            favouriteEP(searchValue)}}>fav</button>
                           </div>
                             <audio src={searchValue.url} controls/>
                              <br/>

@@ -59,19 +59,21 @@ else{
           '2': 'Investigative Journalism',
           '3':'History',
           '4':'Comedy',
-         '5':'Entertainment',
+          '5':'Entertainment',
           '6':'Business',
           '7':'Fiction',
           '8':'News',
           '9':'Kids and Family'
-        }
+        };
+        
           let pg = show.genres.map((num)=>{
              
                let keys = Object.keys(obj);
              
              return keys.includes(`${num}`)?`${obj[num]}, ` : null
 
-           })
+           });
+
     if(show.genres.includes(Number(dataB)) || dataB == '0')
       return(
          <div className='preview_div' key={show.id}>

@@ -47,7 +47,7 @@ export const Season=({rerender})=>{
         {theOne[0].episodes.map(epi=>{
         return(  <div key={epi.episode} className='episode'>
             <p> {epi.title}</p> 
-            <button onClick={()=>{playAudio({'title':epi.title,'url':epi.file,'image':theOne[0].image})}} >play</button>
+            <button onClick={()=>{playAudio({'title':epi.title,'url':epi.file,'image':theOne[0].image,'season':theOne[0].title,'show':data.title})}} >play</button>
           </div>)
         })}
 
