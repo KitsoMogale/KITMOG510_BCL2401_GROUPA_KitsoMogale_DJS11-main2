@@ -1,13 +1,15 @@
 import { useEffect, useState }  from "react"
 import { Link } from "react-router-dom";
-import { useContextA,useContextB } from './Context.jsx';
+import { useContextA,useContextB,useContextC } from './Context.jsx';
 
 
 export const Home=()=>{
 
     const [data,setdata] = useState([]);
+    const [who,setWho] = useState('0');
     const { dataA } = useContextA();
     const {dataB} = useContextB();
+    const {dataC} = useContextC();
 
     useEffect( ()=>{
 
@@ -45,6 +47,38 @@ else{
 
 }
 
+useEffect(()=>{
+  setWho('0')
+},[dataA])
+
+
+useEffect(()=>{
+  setWho('1')
+},[dataC])
+
+if(who == '1'){
+
+    if(data.length > 0){
+      
+      if(dataC == 'New'){
+      data.sort(function(a, b){
+      if(a.updated < b.updated) { return 1; }
+      if(a.updated > b.updated) { return -1; }
+      return 0;}
+      
+  );
+}
+else{
+  data.sort(function(a, b){
+      if(a.updated < b.updated) { return -1; }
+      if(a.updated > b.updated) { return 1; }
+      return 0;}
+      
+  );
+}
+
+}
+}
 
 
 

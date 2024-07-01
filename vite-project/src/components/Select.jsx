@@ -1,5 +1,6 @@
-import { useContextA, useContextC } from './Context.jsx';
+import { useContextA } from './Context.jsx';
 import { useContextB } from './Context.jsx';
+import {useContextC} from './Context.jsx';
 
 
 export const SelectComponent = ({ option1,option2 }) => {
@@ -42,7 +43,7 @@ export const SelectComponent = ({ option1,option2 }) => {
 
   export const SelectDate = () => {
 
-    const { setDataC } = useContextC();
+    const {setDataC} = useContextC();
   
     return (
       <div>

@@ -36,15 +36,15 @@ export const ContextBProviderB = ({ children }) => {
 const ContextC = createContext();
 
 export const useContextC = () => {
-  return useContext(ContextA);
+  return useContext(ContextC);
 };
 
 export const ContextAProviderC = ({ children }) => {
   const [dataC, setDataC] = useState('');
 
   return (
-    <ContextA.Provider value={{ dataC, setDataC }}>
+    <ContextC.Provider value={{ dataC, setDataC }}>
       {children}
-    </ContextA.Provider>
+    </ContextC.Provider>
   );
 };
