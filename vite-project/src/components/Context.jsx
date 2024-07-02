@@ -65,3 +65,20 @@ export const ContextAProviderD = ({ children }) => {
     </ContextD.Provider>
   );
 };
+
+
+const ContextE = createContext();
+
+export const useContextE = () => {
+  return useContext(ContextE);
+};
+
+export const ContextAProviderE = ({ children }) => {
+  const [dataE, setDataE] = useState('');
+
+  return (
+    <ContextE.Provider value={{ dataE, setDataE}}>
+      {children}
+    </ContextE.Provider>
+  );
+};

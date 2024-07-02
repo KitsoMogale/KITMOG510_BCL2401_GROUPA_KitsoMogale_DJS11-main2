@@ -1,10 +1,12 @@
 import { useEffect, useState }  from "react"
 import { Link } from "react-router-dom";
+import { useContextE } from './Context.jsx';
 
 
 export const Carousel=()=>{
 
     const [data,setdata] = useState([]);
+    const {dataE} = useContextE();
 
     useEffect( ()=>{
 
@@ -20,11 +22,23 @@ export const Carousel=()=>{
         
     },[]);
 
+  let filteredData;
+
+  if(dataE != ''){
+
+    filteredData = data.filter(item=>{
+        return item.title.includes(dataE)
+    })
+  }
+  else{
+    filteredData = data;
+  }
+
 
     return (
-        <div id='carousel'>
+        <div id='carousel' >
            {
-             data.length > 0 ? data.map(show=>{
+             filteredData.length > 0 ? filteredData.map(show=>{
               return(
               <Link to={`/id/${show.id}`} onClick={()=>{clickHandler(show.id)}}>
                 <div className="caroudiv" key={show.id}>

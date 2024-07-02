@@ -71,6 +71,13 @@ main{
   
 }
 
+input{
+  width: 15vh;
+  height: 3vh;
+  position: relative;
+  top:2vh;
+}
+
 #carousel{
   display: flex;
   flex-direction: row;
