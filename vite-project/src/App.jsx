@@ -31,6 +31,7 @@ return(
         <Route path='/' element={<Layout render={render} rerender={rerender}/>}>
           <Route index element={<Home/>}/>
           <Route path='/favourites' element={<Favourites/>}/>
+          <Route path='/history' element={<History/>}/>
           <Route path='/id/:id' element={<Season rerender={rerender}/>}/>
         </Route>
       </Routes>
