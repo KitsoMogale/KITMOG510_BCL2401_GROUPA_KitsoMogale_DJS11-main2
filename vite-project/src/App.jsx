@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { Home } from './components/Home'
 import { Season } from './components/Seasons'
-import {ContextAProviderA,ContextBProviderB,ContextAProviderC} from './components/Context.jsx'
+import {ContextAProviderA,ContextBProviderB,ContextAProviderC, ContextAProviderD} from './components/Context.jsx'
 import { Favourites } from './components/Favourites.jsx'
 
 function App() {
@@ -23,6 +23,7 @@ return(
   <ContextAProviderC>
   <ContextAProviderA>
     <ContextBProviderB>
+      <ContextAProviderD>
     <BrowserRouter>
 
       <Routes>
@@ -33,6 +34,7 @@ return(
         </Route>
       </Routes>
     </BrowserRouter>
+    </ContextAProviderD>
     </ContextBProviderB>
     </ContextAProviderA>
     </ContextAProviderC>

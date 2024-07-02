@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 
 
+
 export const Audio = ({rerender})=>{
 
     const [close,setClose] = useState(true);
+
     
     let searchValue = JSON.parse(localStorage.getItem('audio'));
 
@@ -18,6 +20,7 @@ export const Audio = ({rerender})=>{
         ? [...JSON.parse(localStorage.getItem('favs')), ep]
         : [ep];
       localStorage.setItem('favs', JSON.stringify(local));
+
     }
     return(
         <>

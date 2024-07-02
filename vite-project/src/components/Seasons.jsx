@@ -1,5 +1,6 @@
 import { useParams,useSearchParams } from "react-router-dom";
 import { useState,useEffect } from "react";
+import {useContextD} from './Context.jsx';
 
 
 export const Season=({rerender})=>{
@@ -9,6 +10,7 @@ export const Season=({rerender})=>{
     const [openEp,setOpenEp] = useState(false);
     const [ episodes,setEpisodes] = useState();
     const {id} = useParams();
+    const {setDataD} = useContextD();
 
     useEffect( ()=>{
         localStorage.setItem('audio',JSON.stringify({}));
@@ -31,6 +33,7 @@ export const Season=({rerender})=>{
         localStorage.setItem('audio',local);
         localStorage.setItem('play','true');
         rerender(new Array);
+        setDataD(JSON.parse(localStorage.getItem('audio')));
     }
 
 
