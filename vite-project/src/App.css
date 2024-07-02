@@ -84,6 +84,7 @@ input{
   overflow-x: scroll;
   justify-content: flex-start;
   margin: auto;
+  overflow-y: hidden;
 }
 
 .caroudiv{
